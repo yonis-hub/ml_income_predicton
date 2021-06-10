@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/static/css/bells.jpg">
+  <title>Income Prediction with Machine Learning</title>
+
+  <!-- Bootstrap https://bootswatch.com/yeti/ -->
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body>
+  <!-- NAVIGATION -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a href="#" class="pull-left"><img id="logo" src="/static/css/bells.jpg"></a>
+    <a class="navbar-brand" href="index.html">Can Machine Learning Predict Income Levels?</a>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Income Prediction</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="predictions_model.html">Try it Yourself</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- DASHBOARD -->
+  <div class="container">
+
+    <!-- YONIS CODE -->
+    
+    <div class = "ML_inputs">
+      <h1> Income Predictor</h1>
+        <h3> Enter the following values to predict the if income will be over or under $50k</h3>
+    
+        <!-- Input section using a form and the Hypertext Transfer Protocol (HTTP) POST method -->
+        <!-- Pass the form input to 'url_for'.  Make sure that the url_for argument matches the route method name  in app.py -->
+        <form action ="{{url_for('predict')}}"method= "post">
+          <!-- We are using Jinja if statement to fill the previous values from the Flask server if data has been entered -->
+          <input type ="text" name = "sepal_length"  placeholder = "Sepal Length" required = "required" {% if features %} value = {{features[0]}} {% endif %} />
+          <input type ="text" name = "sepal_width"  placeholder = "Sepal Width" required = "required" {% if features %} value = {{features[1]}} {% endif %} />
+          <input type ="text" name = "petal_length"  placeholder = "Petal Length" required = "required" {% if features %} value = {{features[2]}} {% endif %} />
+          <input type ="text" name = "petal_width"  placeholder = "Petal Width" required = "required" {% if features %} value = {{features[3]}} {% endif %} />
+    
+          <button type ="submit" class ="btn"> Predict</button>
+        </form>
+    
+        <br>
+        <br>
+        {{ prediction_text }}
+    </div>
+    
+    <!-- END YONIS CODE -->
+    
+    <!-- end container -->
+  </div>
+
+  
+
+  <!-- Footer-->
+  <div id="footer">
+    <p>UMN DVA Project 3<br>Team 3</p>
+  </div>
+
+<!-- Might Need D3 for event handler -->
+  <!-- d3 JS -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+</body>
+
+</html>

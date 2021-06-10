@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/static/css/bells.jpg">
+  <title>Income Prediction with Machine Learning</title>
+
+  <!-- Bootstrap https://bootswatch.com/yeti/ -->
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body>
+  <!-- NAVIGATION -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a href="/" class="pull-left"><img id="logo" src="/static/css/bells.jpg"></a>
+    <a class="navbar-brand" href="index.html">Can Machine Learning Predict Income Levels?</a>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Income Prediction</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="predictions_model.html">Try it Yourself</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- BODY -->
+  <div class="container">
+
+    <!-- Header -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="head">
+          <h1>About The Project</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- Opening Explanation -->
+    <div class="row">
+      <div class="col-md-6">
+          <p>Our group will look at Census Income Data courtesy of <a href="https://archive.ics.uci.edu/ml/datasets/Census+Income">UCI's Machine Learning Repository</a>. Through roughly 15 input factors, we would like to train a machine learning model to be able to accurately predict whether a person's income is greater than, or lower than $50K.</p>
+          <p>Per the project requirements we will be using a number of different topics that we discussed in class. We will use scikit-learn as well as python, html/css/bootstrap, and javascript. We will additionally have to do a small amount of cleanup to our dataset in a jupyter notebook. We will create a new “cleaned csv” for analysis in this same notebook.</p>
+          <p>To accomplish this, we will test a number of different machine learning models. Those models are as follows:</p>
+          <ul>
+            <li>Logistic Regression</li>
+            <li>K Nearest Neighbors</li>
+            <li>Random Forest</li>
+            <li>Neural Network</li>
+          </ul>
+          <p>In an effort to dive deeper into our data, after looking at each of these models, we will turn our focus to the input factors. We will use a Correlation Matrix to analyze the strengths of the inputs and see if we can determine which ones are having more of an effect on the outcome. This will not affect which model is the best performer, but is an extra path our group wanted to explore for this project as we feel it could lead to more interesting insights about the data that we are working with.</p>
+      </div>
+      <!-- Image -->
+      <div class="col-md-6">
+        <a href="#"><img src="/static/css/UCI_logo.gif"></a>
+        <!-- <a href="#"><img src="/static/css/UCI_Data_Description.png"></a> -->
+      </div>
+      <div class="col-md-12">
+          <p>Our process and analysis of which model performed best and why will be documented on a webpage. Here we plan to give a project overview, as well as detailed descriptions of how and why certain models and parameters were chosen, and how they affect the overall accuracy of the learning models. This will allow us to select our chosen model.</p>
+          <p>In addition to our analysis, we would like to create a webpage that will allow users to interact with the model that we find to be the most accurate so that they can enter in any input factors they like and get a prediction live from our model. To do this we will be using a flask server and hosting our website on Heroku. We will have to pickle our model and preprocessing functions. We are interested in pursuing this addition as it will allow us to not only develop a machine learning model, but to prove its applicability in creating a live demo of our work that anyone can participate in!</p>
+      </div>
+
+    <!-- End Row -->
+    </div>
+
+  <!-- end container -->
+  </div>
+
+
+  <!-- Footer-->
+  <div id="footer">
+    <p>UMN DVA Project 3<br>Team 3</p>
+  </div>
+
+<!-- Might Need D3 for event handler -->
+  <!-- d3 JS -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+</body>
+
+</html>
