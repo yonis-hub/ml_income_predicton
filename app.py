@@ -4,46 +4,59 @@ from flask import Flask, request, jsonify, render_template
 import joblib
 from pickle import load
 
-
-# Placeholder code incase we use a db
-# Define the database connection parameters
-    # database_name = ''
-    # connection_string = f'postgresql://{username}:{password}@localhost:5432/{database_name}'
-# Connect to the database
-# Import tables
-
-
-# Instantiate the Flask application
+# Initialize the flask App
 app = Flask(__name__)
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 # Effectively disables page caching
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
-#load scalers here
+# Load the model from its pickle file. (This pickle 
+# file was originally saved by the code that trained 
+# the model. See mlmodel.py)
+randomforest = load(open('randomforest.pkl', 'rb'))
 
+# Load the scaler from its pickle file. (This pickle
+# file was originally saved by the code that trained 
+# the model. See mlmodel.py)
+scaler = load(open('scaler.pkl','rb'))
 
-
-
-### Define app routes ###
-# Index
-@app.route("/")
+# Define the index route
+@app.route('/')
 def home():
-    webpage = render_template("index.html")
-    return webpage
+    return render_template('index.html')
 
-@app.route("/about")
-def aboutTeam():
-    webpage = render_template("about.html")
-    return webpage
+# Define a route that runs when the user clicks the Predict button in the web-app
+@app.route('/predict',methods=['POST'])
+def predict():
+    
+    # Create a list of the output labels.
+    prediction_labels = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
+    
+    # Read the list of user-entered values from the website. Note that these
+    # will be strings. 
+    features = [x for x in request.form.values()]
 
-# route that takes user input and makes a predictions
-@app.route("/predict", medthods=['POST'])
-def predictor():
+    # Convert each value to a float.
+    float_features = [float(x) for x in features]
 
-    webpage = render_template("mlmodel.html" )
-    return webpage
+    # Put the list of floats into another list, to make scikit-learn happy. 
+    # (This is how scikit-learn wants the data formatted. We touched on this
+    # in class.)
+    final_features = [np.array(float_features)]
+     
+    # Preprocess the input using the ORIGINAL (unpickled) scaler.
+    # This scaler was fit to the TRAINING set when we trained the 
+    # model, and we must use that same scaler for our prediction 
+    # or we won't get accurate results. 
+    final_features_scaled = scaler.transform(final_features)
+
+    # Use the scaled values to make the prediction. 
+    prediction_encoded = randomforest.predict(final_features_scaled)
+    prediction = prediction_labels[prediction_encoded[0]]
+
+    # Render a template that shows the result.
+    prediction_text = f'Iris flower type is predicted to be :  {prediction}'
+    return render_template('index.html', prediction_text=prediction_text, features=features)
 
 
-
-# This statement is required
-# Final lines for Flask to run properly
-if __name__ == '__main__':
+# Allow the Flask app to launch from the command line
+if __name__ == "__main__":
     app.run(debug=True)
