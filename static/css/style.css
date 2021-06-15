@@ -1,0 +1,154 @@
+#logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.picture-centered {
+    width: 20px;
+    height:10px;
+    min-height: 100%;
+    min-width: 100%;
+    padding-bottom: 20px;
+    margin-left: 50px;
+    margin-right: 10px;
+}
+
+body, html {
+  height: 100%;
+}
+
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/css/Images/ML_Networks.jpeg");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+/* Team Member Class */
+.team-member {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.team-member img {
+  margin: 0 auto;
+}
+
+.team-member h4 {
+  margin-top: 15px;
+  margin-bottom: 0;
+  text-transform: none;
+}
+
+.team-member p {
+  margin-top: 0;
+}
+
+.img-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  shape-margin: 25px;
+}
+
+/* Picture resize, not working!!! */
+#thumbnail {
+  width: 100px;
+  height: 50px;
+  margin-left: 10px;
+  object-fit: fill;
+}
+
+/* User Select Info Panel */
+:root {
+  /* --panel-color: rgba(0, 0, 0, 0.135); */
+  --panel-border-width: 5px;
+  --panel-border-height: 5px;
+  --panel-padding: 20px;
+}
+
+.panel {
+  background: var(--panel-color);
+  border-radius: var(--panel-border-width);
+  padding: var(--panel-border-width);
+  padding-top: var(--panel-border-height);
+}
+
+.panel__header, 
+.panel__content {
+  padding: var(--panel-padding);
+}
+
+.panel__title {
+  line-height: 1;
+}
+
+.panel__content {
+  background:  rgb(207, 34, 193);;
+}
+/*  */
+
+.row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* background-color: rgba(89, 136, 45, 0.493); */
+  background-blend-mode: saturation;
+}
+
+.color-row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgba(236, 206, 37, 0.493);
+  background-blend-mode: saturation;
+}
+
+#selDataset {
+  width: 90%;
+}
+
+nav {
+  margin-bottom: 20px;
+}
+
+body {
+  background-color: whitesmoke;
+  background-blend-mode: overlay;
+}
+
+#footer {
+  position: bottom;
+  bottom: 0;
+  width: 100%; /* Set the fixed height of the footer here */
+  height: 10px;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  text-align: center;
+  background-color: rgb(29, 29, 29);
+  margin-top: 20px;
+}
+
+#footer p {
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  color: white;
+}

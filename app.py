@@ -4,59 +4,50 @@ from flask import Flask, request, jsonify, render_template
 import joblib
 from pickle import load
 
-# Initialize the flask App
+
+# Placeholder code incase we use a db
+# Define the database connection parameters
+    # database_name = ''
+    # connection_string = f'postgresql://{username}:{password}@localhost:5432/{database_name}'
+# Connect to the database
+# Import tables
+
+
+# Instantiate the Flask application
 app = Flask(__name__)
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 # Effectively disables page caching
 
-# Load the model from its pickle file. (This pickle 
-# file was originally saved by the code that trained 
-# the model. See mlmodel.py)
-randomforest = load(open('randomforest.pkl', 'rb'))
+#load scalers here
 
-# Load the scaler from its pickle file. (This pickle
-# file was originally saved by the code that trained 
-# the model. See mlmodel.py)
-scaler = load(open('scaler.pkl','rb'))
 
-# Define the index route
-@app.route('/')
+### Define app routes ###
+#main/home page this will have our ml model analysis
+@app.route("/")
 def home():
-    return render_template('index.html')
+    webpage = render_template("index.html")
+    return webpage
 
-# Define a route that runs when the user clicks the Predict button in the web-app
-@app.route('/predict',methods=['POST'])
-def predict():
-    
-    # Create a list of the output labels.
-    prediction_labels = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
-    
-    # Read the list of user-entered values from the website. Note that these
-    # will be strings. 
-    features = [x for x in request.form.values()]
+#this rought explains where and what dataset we are using for our ml models
+@app.route("/about")
+def projectOverview():
+    webpage = render_template("about.html")
+    return webpage
 
-    # Convert each value to a float.
-    float_features = [float(x) for x in features]
+# We might have to move away from making any predcitons 
+# might delete this route
+# route that takes user input and makes a predictions
+@app.route("/predictor")
+def predictor():
+    webpage = render_template("predictions_model.html" )
+    return webpage
 
-    # Put the list of floats into another list, to make scikit-learn happy. 
-    # (This is how scikit-learn wants the data formatted. We touched on this
-    # in class.)
-    final_features = [np.array(float_features)]
-     
-    # Preprocess the input using the ORIGINAL (unpickled) scaler.
-    # This scaler was fit to the TRAINING set when we trained the 
-    # model, and we must use that same scaler for our prediction 
-    # or we won't get accurate results. 
-    final_features_scaled = scaler.transform(final_features)
-
-    # Use the scaled values to make the prediction. 
-    prediction_encoded = randomforest.predict(final_features_scaled)
-    prediction = prediction_labels[prediction_encoded[0]]
-
-    # Render a template that shows the result.
-    prediction_text = f'Iris flower type is predicted to be :  {prediction}'
-    return render_template('index.html', prediction_text=prediction_text, features=features)
+#this rought has the about team info
+@app.route("/team")
+def aboutTeam():
+    webpage = render_template("about_us.html")
+    return webpage
 
 
-# Allow the Flask app to launch from the command line
-if __name__ == "__main__":
+#  flask requirment to run properly
+if __name__ == '__main__':
     app.run(debug=True)
