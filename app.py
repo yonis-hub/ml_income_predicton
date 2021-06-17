@@ -54,13 +54,13 @@ def magicHappenshere():
     prediction_labels = [">=50","<=50"]
 
     # Load the model.
-    randomforest = load(open('randomforest.pkl', 'rb'))
+    randomforest = load(open('static/data/randomforest.pkl', 'rb'))
 
     # Load the scaler.
-    scaler = load(open('scaler.pkl', 'rb'))
+    scaler = load(open('static/data/scaler.pkl', 'rb'))
 
     # add file here
-    with open('dataset.csv') as f:
+    with open('static/data/dataset.csv') as f:
         reader = csv.reader(f)
         chosen_row = random.choice(list(reader))
         chosen_row_float = [float(x) for x in chosen_row ]
