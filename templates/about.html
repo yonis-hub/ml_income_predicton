@@ -42,25 +42,16 @@
   </nav>
 
 
-    <div class="hero-image">
+    <!-- Hero Image -->
+    <div class="hero-image-PO">
       <div class="hero-text">
         <h1>About The Project</h1>
         <p>Our team tested 4 different machine learning models. Below we describe each model, why it was chosen, and the analysis that our team did. Please see the below descriptions and explanations. At the end you will have a better understanding and get to try out the model that we found to be the most accurate.</p>
       </div>
     </div>
-  <!-- BODY -->
+    
+  <!-- BODY TEXT -->
   <div class="container">
-
-    <!-- Header -->
-    <!-- <div class="row"> -->
-      <div class="col-md-12">
-        <div class="text-center">
-          <h1>About The Project</h1>
-        </div>
-      <!-- </div> -->
-    </div>
-
-
 
     <!-- Opening Explanation -->
     <div class="row">
@@ -74,9 +65,34 @@
         <div class="text-center">
           <img src="/static/css/Images/UCI_logo.gif" class="img-responsive" alt="">
         </div>
-        <!-- <a href="#"><img src="/static/css/UCI_Data_Description.png"></a> -->
+        <!-- Table Dataset Description -->
+        <table style="width:100%">
+          <tr>
+            <th colspan="2">Dataset Overview</th>
+          </tr>
+          <tr>
+            <td>Data Set Characteristics</td>
+            <td>Multivariate</td>
+          </tr>
+          <tr>
+            <td>Attribute Characteristics</td>
+            <td>Categorical, Integer</td>
+          </tr>
+          <tr>
+            <td>Number of Instances</td>
+            <td>48842</td>
+          </tr>
+          <tr>
+            <td>Number of Attributes</td>
+            <td>14</td>
+          </tr>
+          <tr>
+            <td>Missing Values</td>
+            <td>Yes</td>
+          </tr>
+        </table>
       </div>
-      
+        
       <!-- Remaining Projext Explanation -->
       <div class="col-md-6 col-sm-12 color-row">
           <p>After some deliberation and research, our team selected the following four machine learning models to focus on for this project:</p>
@@ -91,15 +107,6 @@
           <p>In an effort to dive deeper into our data, after looking at each of these models, our team turned our focus to the input factors of our dataset. We sought to analyze the strengths of the inputs to determine which, if any, were having a more significant impact on the outcomes of our models. We understand that these findings would not affect which model is the best performer, but chose this additional analysis on our dataset as we felt it would lead to a deeper understanding of our data, our models, and our project as a whole.</p>
       </div>
 
-      <!-- Image -->
-      <div class="col-md-6 col-sm-12">
-        <div class="picture-centered">
-          <img src="/static/css/Images/UCI_Data_Description.png" class="img-responsive" alt="">
-        </div>
-        <!-- <a href="#"><img src="/static/css/Images/UCI_logo.gif"></a> -->
-        <!-- <a href="#"><img src="/static/css/UCI_Data_Description.png"></a> -->
-      </div>
-
       <!-- Finish Project Explanation full page -->
       <div class="col-md-12">
         <h3>Presenting the Project</h3>
@@ -107,6 +114,7 @@
         <h3>An Interactive Model</h3>
           <p>One of the most exciting parts of this project is coming out of it with an interactive demo that anyone can try. If you want to interact with the model that we found to be the best predictor of our dataset follow the link below or click on the <i>Income Predictor</i> tab at the top of the page. There you can add in your own values for some of the input factors and see if our model can accurately predict if income is above or below $50,000!!</p>
           <a href="http://127.0.0.1:5500/templates/predictorions_model.html">Try Out Our Best Performing Model in this Interactive Activity!</a>
+          <!-- <button type="button" class="btn btn-primary btn-lg" href="http://127.0.0.1:5500/templates/predictorions_model.html">Large button</button> -->
         </div>
 
     <!-- End Row -->

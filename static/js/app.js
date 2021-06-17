@@ -1,10 +1,10 @@
 console.log("app.js connected");
 
-// -------------------------------------------- //
-
-// Code below
-// d3.csv("../data").then(function(data) {
-//     console.log("Loading Data CSV");
-//     console.log(data);
-
-// });
+//
+function buttonClick() {
+    d3.text('/magic').then (function(d){
+    console.log(d)
+    document.getElementById("prediction").textContent = 'The Modle Predicts' + d
+    });
+    
+  }

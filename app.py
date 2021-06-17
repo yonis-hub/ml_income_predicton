@@ -3,6 +3,9 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 import joblib
 from pickle import load
+import numpy as np
+import random
+import csv
 
 
 # Placeholder code incase we use a db
@@ -38,8 +41,40 @@ def projectOverview():
 # route that takes user input and makes a predictions
 @app.route("/predictor")
 def predictor():
-    webpage = render_template("predictions_model.html" )
+  
+    
+    webpage = render_template("predictions_model.html",)
     return webpage
+
+
+#this rought has the about team info
+@app.route("/magic")
+def magicHappenshere():
+      #income prediction labels
+    prediction_labels = [">=50","<=50"]
+
+    # Load the model.
+    randomforest = load(open('randomforest.pkl', 'rb'))
+
+    # Load the scaler.
+    scaler = load(open('scaler.pkl', 'rb'))
+
+    # add file here
+    with open('dataset.csv') as f:
+        reader = csv.reader(f)
+        chosen_row = random.choice(list(reader))
+        chosen_row_float = [float(x) for x in chosen_row ]
+        # print(chosen_row)
+        chosen_row_reshape = [np.array(chosen_row_float)]
+        # print(chosen_row_reshape)
+        
+        prediction_scaled = scaler.transform(chosen_row_reshape)
+        print(prediction_scaled)
+
+        # 
+        predict = randomforest.predict(prediction_scaled)
+        return prediction_labels[predict[0]]
+
 
 #this rought has the about team info
 @app.route("/team")

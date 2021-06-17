@@ -4,6 +4,8 @@
   margin-right: 10px;
 }
 
+/* Image Adjustments */
+
 .picture-centered {
     width: 20px;
     height:10px;
@@ -14,14 +16,59 @@
     margin-right: 10px;
 }
 
+/* Push to the right */
+.right-adjust {
+  margin-left: 50px;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+/* Shrink and Push Up Left */
+.shrink-adjust {
+  size: 80%;
+  margin-bottom: 50px;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
 body, html {
   height: 100%;
 }
 
-/* The hero image */
-.hero-image {
+/* The hero image Machine Learning Page */
+.hero-image-ML {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/css/Images/ML_Networks.jpeg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("/static/css/Images/ML-Moving.gif");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* The hero image Project Overview Page */
+.hero-image-PO {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/css/Images/teamwork.gif");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* The hero image Project Overview Page */
+.hero-image-INCOME {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/css/Images/cashcash.gif");
 
   /* Set a specific height */
   height: 50%;
@@ -42,6 +89,19 @@ body, html {
   transform: translate(-50%, -50%);
   color: white;
 }
+
+/* HTML Data Tables */
+table, th, td {
+  margin-top: 25px;
+  padding: 5px;
+  border: 1.5px solid black;
+  border-collapse: collapse;
+}
+
+th {
+    text-align: center;
+}
+
 
 /* Team Member Class */
 .team-member {
@@ -78,35 +138,6 @@ body, html {
   object-fit: fill;
 }
 
-/* User Select Info Panel */
-:root {
-  /* --panel-color: rgba(0, 0, 0, 0.135); */
-  --panel-border-width: 5px;
-  --panel-border-height: 5px;
-  --panel-padding: 20px;
-}
-
-.panel {
-  background: var(--panel-color);
-  border-radius: var(--panel-border-width);
-  padding: var(--panel-border-width);
-  padding-top: var(--panel-border-height);
-}
-
-.panel__header, 
-.panel__content {
-  padding: var(--panel-padding);
-}
-
-.panel__title {
-  line-height: 1;
-}
-
-.panel__content {
-  background:  rgb(207, 34, 193);;
-}
-/*  */
-
 .row {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -117,7 +148,7 @@ body, html {
 .color-row {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: rgba(236, 206, 37, 0.493);
+  background-color: rgba(148, 144, 121, 0.493);
   background-blend-mode: saturation;
 }
 
