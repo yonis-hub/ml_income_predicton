@@ -55,8 +55,12 @@
     <div class="row">
       <div class="col-md-7 row">
         <h2 class="text-center">Logistic Regression</h2>
-        <p>A Logistic regression is a classification algorithm used to predict a discrete set of classes or categories.</p>
-        <p>As the data set is categorical, logistic regression was a useful model to use. While it is a commonly used in Machine Learning, logistic regression is helpful when predicting binary classes. Since we had a large data collection, logistic regression worked well based on our large sample size. The only form of ELT (Extract, Transform, Load) needed was removing the income column prior to testing the model. Our logistic regression model had a training score of 79.39%. The test data has a score of 80.73%. As a result, the logistic regression test had an accuracy of 80.73%.</p>
+        <p>A Logistic regression is a classification algorithm used to predict a discrete set of classes or categories. A logistic regression is often used as it does not just output numerical values, but applies an activation function. This activation function allows the model to output a probability value between 0 and 1. Once one has this probability value, they can then map it to a discrete output such as "happy" or "sad", or "hungry" or "full".</p>
+        <p>As our data set is categorical, logistic regression was a useful model to use. While it is a commonly used in Machine Learning, logistic regression is most helpful in situations when one is predicting binary classes. Since we had a large data collection, logistic regression worked well based on our large sample size.<br>
+          The only form cleanup that needed to be done to ensure we could perform a logistic regression was to remove the income column prior to testing the model.</p>
+        <p>The Logistic Regression model had a training score of 79.39%.<br>
+          The test data has a score of 80.73%.<br>
+          As a result, the logistic regression test had an accuracy of 80.73%.</p>
       </div>
       <!-- Image -->
       <div class="col-md-5 row">
@@ -77,8 +81,13 @@
       </div>
       <div class="col-md-7 row">
         <h2>K Nearest Neighbor</h2>
-        <p>A K Nearest Neighbor algorithm assumes the similarity between the new case/data and available cases and put the new data into the category that is most similar to the available categories.</p>
-        <p>To choose the K that is best for the data, the model was run multiple times with different values of K. We picked the K that reduced the number of errors, and that allowed the model to predict an outcome based on data it has not seen before. As a result, the model can be slow to run in its entirety. However, due to the robust and clean nature of the data, we feel comfortable utilizing this model as part of our data exploration. Our KNN model had a training score of  85.00%. The test data has a score of 83.33%. As a result, the KNN test has an accuracy of 83.33%</p>
+        <p>A K Nearest Neighbor algorithm is a popular choice for machine learning as it is a simple and robust process that can be used for both classification and <i>sometimes</i> regression. A K Nearest Neighbors model does not require much memory usage. It also accounts for outlier insensitivity, has the ability to classify non-linear data, and typically highly accurate.</p>
+        <p>This type of model works by finding the similarity between the new case/data and available cases. It then puts the new data into the category that is most similar to the available categories.<br>
+          Therefore, one of the most important aspects of the K Nearest Neighbor model is choosing the k value. Or in otherwords, choosing the number of closest neighbors for a classification to occur.</p>
+        <p>To choose the K that is best for this data, our group had the model run multiple times with different values of K. We picked the K that reduced the number of errors most significantly. This allowed the model to predict an outcome based on data it has not seen before. As a result, the model can be slow to run in its entirety. However, due to the robust and clean nature of the data, we feel comfortable utilizing this model as part of our data exploration.</p>
+        <p>KNN model had a training score of  85.00%.<br>
+          The test data has a score of 83.33%.<br>
+          As a result, the KNN test has an accuracy of 83.33%</p>
       </div>
     </div>
 
@@ -88,8 +97,11 @@
     <div class="row">
       <div class="col-md-6 row">
         <h2>Random Forest</h2>
-        <p>Random forest is one of the most flexible and simpler machine learning algorithms that is known to produce great result majority of the time. Random Forest works by building multiple decision trees and merging them together to get a more accurate and stable prediction.  The main purpose of our model was to predict whether a person makes greater than or equal to 50,000 dollars per year. Some of the steps included dropping the “label” or “target” column and converting the data to binary. We also imported the Random Forest Classifier to train our model and test it. Finally, we calculated the accuracy value and it was 86 percent. This is considered a very good accuracy prediction.</p>
-        <p>Random Forest has another great quality algorithm that can be used to calculate the relative importance of each feature on the prediction. For our model: work class, age, education, and marital status were one of the top four greatest contributors to the income prediction, respectively. On the other hand: sex, occupation, native country, and race were among the least factors that contributed to income prediction. This came out as a surprise to us since Sex and Occupation are usually assumed to have maximum effect on income prediction. We also run our model by dropping factors that had an accuracy score of 0.005 percent and below to see if that will affect the Random Forest Model prediction accuracy. Once that was run, the accuracy value dropped down to 84.7 percent.</p>
+        <p>A Random Forest model is one of the more flexible and simple to implement machine learning models our group encountered. In addition, Random Forest's are well known for being an improvement upon a <i>Decision Tree</i> model. For those reasons, a Random Forest model is able to be more generalized and is often a much less complex machine learning model comparitively speaking.</p>
+        <p>This model works by taking a sample of the data and using it to build several smaller, much simpler, decision trees. All of these decision trees working together create something that resembles a forest. Maybe a little tongue and cheeck, but the analogy has some weight to it.<br>
+          This is an effective strategy as the overal forest can be relatively complex, but each individual tree is only built from a subset of the data so it can be in a much simpler form. While each tree on its own would be considered a weak classifier, when they are all working together to arrive at a prediction, you get a very effectient and strong classifier.</p>
+        <p>Our group also used a Random Forest to determine the weights of the input factors. This will be discussed after the models.</p>
+        <p>Random Forest Accuracy score of  85.88%.</p>
       </div>
       <!-- Image -->
       <div class="col-md-6 row">
@@ -110,15 +122,21 @@
       </div>
       <div class="col-md-7 row">
         <h2>Neural Network</h2>
-        <p>A Neural Network machine learning model is... as well as this is s just an extra text section to see how the text wraps and how longs this row s is and thats about it. this will be updated hopefully sooner rather than now</p>
-        <p>Neural Network Model is a simulation of the actual Neuron cells in the Human Body. It is regarded as a network of neurons which are organized in layers. In our model the income predictors form the bottom layer while the forecast or output form the top layer. We started our codes by importing Train and test, label encoder and converting it to one hot encoder. We then scaled our data and fit it to the model. The accuracy value was calculated and turned out to be 86 percent which is equal to the accuracy percentage of Random Forest.</p>
+        <p>A Neural Network Model is meant to simulate the actual Neuron cells in the Human Body. In fact, the development of neural nets were inspired by the arrangement of neurons in the human brain. In both cases a network of neurons operates to make predictions. However, for artifical neural networks, we require a layering structure.</p>
+        <p>A neural netwrok is really just trying to find patterns within the inputs it is givien. Each neuron works by transforming inputs into a mathematical output. These outputs are often represented as probabilites.<br>
+          For instance, a neural networks will return a result such as "80% likely to be yes" and "20% likely to be no".</p>
+        <p>A model can be trained through something known as forward propagation. This is the process of feeding the neural network a ton of inputs and having it compare the outputs to a known label.<br>
+          As the model continues to run, the error of the output probability is fed through backward propagation. This allows the network to update each neurons weight and results in a more accurate prediction.<br>
+          Once a network is properly trained, it can then look at a new set of data or a new input, and predict an outcome with high levels of accuracy.</p>
+        <p>For our model, the income predictors form the bottom layer while the forecast or output form the top layer. We started by importing train and test, label encoder and converting it to one hot encoder.<br>We then scaled our data and fit it to the model.</p>
+        <p>Neural Network Accuracy score of 86.04%</p>
       </div>
     </div>
 
     <!-- Confusion Matrix or other Input Strength Tests -->
     <div class="row">
       <div class="col-md-12">
-        <h1 class="text-center">Determining Input Factor Strengths</h1> 
+        <h1 class="text-center">Determining Input Factor Strengths</h1>
       </div>  
     </div>
 
@@ -126,15 +144,21 @@
     <div class="row">
       <!-- Image -->
       <div class="col-md-4 row">
-        <p>For additional analysis, our team was interested to see the overall strengths of each input variable. We wanted to see if any variable had more of an effect on the overall prediction than another.<br>
+        <p><br>For additional analysis, our team was interested to see the overall strengths of each input variable. We wanted to see if any variable had more of an effect on the overall prediction than another.<br>
           As can be seen in the graph to the right, of the 14 determinating factors in our dataset there are 5 that have more significant of an impact to the final prediction.<br>
           The graph was created during the random forest model test and used imported <i>sklearn</i> functionality in association with <i>pandas</i> to determine the inputs importnace and priority percentage as they pertain to the accuracy of an overall income prediction. </p>
-        <p>ADD MORE ANALYSIS OR CONFUSION MATRIX explanation......</p>
       </div>
       <div class="col-md-8 row">
         <div class="text-center">
           <img src="/static/css/Images/prediction_factors.png" class="img-responsive" alt="">
         </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p>For our model: work class, age, education, and marital status were one of the top four greatest contributors to the income prediction, respectively. On the other hand: sex, occupation, native country, and race were among the least factors that contributed to income prediction.<br>
+          This came out as a surprise to us since Sex and Occupation are usually assumed to have a large effect on ones' income.</p>
       </div>
     </div>
 
@@ -149,21 +173,25 @@
     <div>
       <div class="text-center">
         <p>As seen in the graph below, all of the chosen models performed well in comparison to one another. A net of <i>2.57</i> percentage points seperates the range of accuracy scores across the four models. The final accuracy scores of each model are as follows:</p>
-        <p>Regression: 80.73%   |   K Nearest Neighbor: 83.33%<br>
+        <p>Logistic Regression: 80.73%   |   K Nearest Neighbor: 83.33%<br>
           Random Forest: 85.88%   |   Neural Network: 86.04%</p>
-        <img class="image-center space-adjust" src="/static/css/Images/model_comparison.png" class="space-adjust img-responsive" alt=""></img>
-        <p>For this reason it is difficult to pick one model as a clear winner over another. When the accuracy levels are so close to one another, other factors such as the models efficiency or accessibilty for further research start to become larger factors than just the overall accuracy of the model. For this reason, our team decided that the model that made the most sense to build our live predication demo with would be the <i>Random Forest</i> model.</p>
+        
       </div>
     </div>
-    
-      <!-- Final Analysis Write Up -->
-  <div>
-    <div class="text-center">
-      <h2>Want to try it out yourself?</h2>
-      <p>One of the most exciting parts of this project is coming out of it with an interactive demo that anyone can try. If you want to interact with the model that we found to be the best predictor of our dataset follow the link below or click on the <i>Income Predictor</i> tab at the top of the page. There you can add in your own values for some of the input factors and see if our model can accurately predict if income is above or below $50,000!!</p>
+
+    <!-- Decision on which model to pick -->
+    <div class="row">
+      <div class="col-md-7 row">
+        <h2>Final Model Selection</h2>
+        <p>For this reason it is difficult to pick one model as a clear winner over another. When the accuracy levels are so close to one another, other factors such as the models efficiency or accessibilty for further research start to become larger factors than just the overall accuracy of the model. For this reason, our team decided that the model that made the most sense to build our live predication demo with would be the <i>Random Forest</i> model.</p>
+        <h2>Want to try it out yourself?</h2>
+        <p>One of the most exciting parts of this project is coming out of it with an interactive demo that anyone can try. If you want to interact with the model that we found to be the best predictor of our dataset follow the link below or click on the <i>Income Predictor</i> tab at the top of the page. There you can add in your own values for some of the input factors and see if our model can accurately predict if income is above or below $50,000!!</p>
           <a href="/predictor">Try Out Our Best Performing Model in this Interactive Activity!</a>
+      </div>
+      <div class="col-md-5 row">
+        <img class="image-center right-adjust" src="/static/css/Images/model_comparison.png" class="space-adjust img-responsive" alt=""></img>
+      </div>
     </div>
-  </div>
 
 
   <!-- End Container -->

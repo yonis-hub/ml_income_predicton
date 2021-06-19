@@ -23,6 +23,14 @@
   padding-right: 5px;
 }
 
+/* Push to the right */
+.right-adjust-sm {
+  object-fit: scale-down;
+  margin-left: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 /* Shrink and Push Up Left */
 .shrink-adjust {
   width: 1100px;
