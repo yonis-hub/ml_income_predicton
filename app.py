@@ -51,7 +51,7 @@ def predictor():
 @app.route("/magic")
 def magicHappenshere():
       #income prediction labels
-    prediction_labels = ["Less than $50k","Greater than or equal $50K"]
+    prediction_labels = ["Less than $50K","Greater than or equal $50K"]
 
     # Load the model.
     randomforest = load(open('static/data/randomforest.pkl', 'rb'))
@@ -79,11 +79,15 @@ def magicHappenshere():
         
         predict = randomforest.predict(prediction_scaled) 
         
-        our_str = "Our Random Forest Model Predicts the Income to be: \n"
+        our_str = (f"Our Random Forest Model Predicts the Income to be: \n")
         modle_prediction = prediction_labels[predict[0]]
         index_str = (f' Test data is being pulled from Index: {index_num}')
 
-        return (our_str + prediction_labels[predict[0]] + '.') + index_str 
+        # Combine all three for the return with line breaks
+        # final_prediction = (f'{our_str}\n{index_str}')
+
+        # return (f'{our_str}\n{index_str}')
+        return (our_str + prediction_labels[predict[0]] + '.') +  index_str
 
 
 #this rought has the about team info
